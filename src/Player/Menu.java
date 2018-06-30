@@ -434,9 +434,9 @@ public class Menu {
         int opc=0;
         do{
             System.out.println("-*-*-*-*-*-*-*-*-*-Recursos-*-*-*-*-*-*-*-*-*-*-*-*-");
-            System.out.println("Titanio: "+getJugador().getC_mando2().getRecurso1());
-            System.out.println("Carbon: "+getJugador().getC_mando2().getRecurso2());
-            System.out.println("Ecos: "+getJugador().getC_mando2().getRecurso3());
+            System.out.println("Oro: "+getJugador().getC_mando2().getRecurso1());
+            System.out.println("Gema: "+getJugador().getC_mando2().getRecurso2());
+            System.out.println("Elixir: "+getJugador().getC_mando2().getRecurso3());
             System.out.println("\n*-*-*-*-*-*-*-Lanzarroca-*-*-*-*-*-*-*-");
             System.out.println("1. Atacar");
             System.out.println("2. Generar Elixir");
