@@ -82,7 +82,7 @@ public class V_Motocicleta implements Verdugo{
     public void construir(Jugador jugador){
         int total, total1;
         AbstractFactory verdugo = FactoryP.getFactory("Verdugo");
-        Verdugo moto = verdugo.getVerdugo("Avioneta");
+        Verdugo moto = verdugo.getVerdugo("Motocicleta");
         V_Motocicleta va = new V_Motocicleta(jugador);
         if(va.getJugador().getC_mando().getRecurso1() >= costo 
            && va.getJugador().getC_mando().getRecurso2() >= costo){
@@ -93,7 +93,7 @@ public class V_Motocicleta implements Verdugo{
             System.out.println("Construccion realizada");
             va.getJugador().getEdi_3().add(moto);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     

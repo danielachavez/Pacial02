@@ -83,16 +83,16 @@ public class L_Infernal implements Lanzarroca{
         AbstractFactory lanzarroca = FactoryP.getFactory("Lanzarroca");
         Lanzarroca inf = lanzarroca.getLanzarroca("Torre Infernal");
         L_Infernal li = new L_Infernal(jugador);
-        if(li.getJugador().getC_mando2().getRecurso1() >= costo 
+        if(li.getJugador().getC_mando2().getRecurso3() >= costo 
            && li.getJugador().getC_mando2().getRecurso2() >= costo){
-            total = li.getJugador().getC_mando2().getRecurso1()-costo;  
-            li.getJugador().getC_mando2().setRecurso1(total);
+            total = li.getJugador().getC_mando2().getRecurso3()-costo;  
+            li.getJugador().getC_mando2().setRecurso3(total);
             total1 = li.getJugador().getC_mando2().getRecurso2()-costo;
             li.getJugador().getC_mando2().setRecurso2(total1);
             System.out.println("Construccion realizada");
             li.getJugador().getEdi_2().add(inf);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     
@@ -103,7 +103,13 @@ public class L_Infernal implements Lanzarroca{
 
     @Override
     public int getAtacar(){
-        return daño;
+        int total;
+        L_Infernal li = new L_Infernal();
+        System.out.println("antes: "+getVida());
+        total = getVida()-li.getDaño();
+        setVida(total);
+        System.out.println("despues: "+getVida());
+        return total;
     }
     
     @Override

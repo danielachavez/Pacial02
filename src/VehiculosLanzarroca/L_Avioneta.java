@@ -84,11 +84,11 @@ public class L_Avioneta implements Lanzarroca {
         Lanzarroca avi = lanzarroca.getLanzarroca("Avioneta");
         L_Avioneta la = new L_Avioneta(jugador);
         if(la.getJugador().getC_mando2().getRecurso1() >= costo 
-           && la.getJugador().getC_mando2().getRecurso2() >= costo){
+           && la.getJugador().getC_mando2().getRecurso3() >= costo){
             total = la.getJugador().getC_mando2().getRecurso1()-costo;  
             la.getJugador().getC_mando2().setRecurso1(total);
-            total1 = la.getJugador().getC_mando2().getRecurso2()-costo;
-            la.getJugador().getC_mando2().setRecurso2(total1);
+            total1 = la.getJugador().getC_mando2().getRecurso3()-costo;
+            la.getJugador().getC_mando2().setRecurso3(total1);
             System.out.println("Construccion realizada");
             la.getJugador().getTrans_2().add(avi);
         }else{

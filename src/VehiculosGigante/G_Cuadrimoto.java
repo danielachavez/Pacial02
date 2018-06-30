@@ -16,9 +16,9 @@ import Player.Jugador;
  */
 public class G_Cuadrimoto implements Gigante {
     
-    public int vida = 75;
-    public int daño = 75;
-    public int costo = 1000;
+    public int vida = 150;
+    public int daño = 150;
+    public int costo = 1500;
     int cantidad;
     public Jugador jugador;
     boolean estado = false;
@@ -93,7 +93,7 @@ public class G_Cuadrimoto implements Gigante {
             System.out.println("Construccion realizada");
             gc.getJugador().getTrans_1().add(cua);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     

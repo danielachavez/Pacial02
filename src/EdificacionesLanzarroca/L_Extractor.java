@@ -99,9 +99,9 @@ public class L_Extractor implements Lanzarroca{
     @Override
     public int recoger(Jugador jugador){
         int num;
-        L_Extractor a = new L_Extractor(jugador);
-        num = a.getCantidad();
-        a.getJugador().getC_mando().setRecurso2(a.getJugador().getC_mando().getRecurso2()+num);
+        L_Extractor x = new L_Extractor(jugador);
+        num = x.getCantidad();
+        x.getJugador().getC_mando().setRecurso2(x.getJugador().getC_mando().getRecurso2()+num);
         return num;
     }
 

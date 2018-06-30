@@ -81,7 +81,7 @@ public class V_Tesla implements Verdugo{
     public void construir(Jugador jugador){
         int total, total1;
         AbstractFactory verdugo = FactoryP.getFactory("Verdugo");
-        Verdugo te = verdugo.getVerdugo("Energia");
+        Verdugo te = verdugo.getVerdugo("Torre Tesla");
         V_Tesla a = new V_Tesla(jugador);
         if(a.getJugador().getC_mando().getRecurso1() >= costo 
            && a.getJugador().getC_mando().getRecurso2() >= costo){
@@ -92,7 +92,7 @@ public class V_Tesla implements Verdugo{
             System.out.println("Construccion realizada");
             a.getJugador().getEdi_3().add(te);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     

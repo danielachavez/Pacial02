@@ -15,7 +15,7 @@ import Player.Jugador;
 public class T_Gigante implements Gigante {
     
     public int vida = 100;
-    public int daño = 75;
+    public int daño = 100;
     public int costo = 1000;
     int cantidad;
     public Jugador jugador;

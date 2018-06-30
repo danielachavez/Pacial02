@@ -15,11 +15,11 @@ import Player.Jugador;
  * @author Daniela Chavez
  */
 public class V_Mina implements Verdugo {
-     boolean estado=false;
+    boolean estado=false;
     int daño,
         cantidad=1000;
     public int vida = 350;
-    public int costo = 1500;
+    public int costo = 1000;
     public Jugador jugador;
 
     public V_Mina() {
@@ -81,7 +81,7 @@ public class V_Mina implements Verdugo {
     public void construir(Jugador jugador){
         int total, total1;
         AbstractFactory verdugo = FactoryP.getFactory("Verdugo");
-        Verdugo mi = verdugo.getVerdugo("Mina");
+        Verdugo mi = verdugo.getVerdugo("Mina de diamantes");
         V_Mina vm = new V_Mina(jugador);
         if(vm.getJugador().getC_mando().getRecurso1() >= costo 
            && vm.getJugador().getC_mando().getRecurso2() >= costo){
@@ -92,7 +92,7 @@ public class V_Mina implements Verdugo {
             System.out.println("Construccion realizada");
             vm.getJugador().getEdi_3().add(mi);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     

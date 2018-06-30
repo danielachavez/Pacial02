@@ -16,7 +16,7 @@ import Player.Jugador;
  */
 public class G_Camion implements  Gigante {
     
-    public int vida=150;
+    public int vida=250;
     public int daño = 150;
     public int costo = 2000;
     int cantidad;

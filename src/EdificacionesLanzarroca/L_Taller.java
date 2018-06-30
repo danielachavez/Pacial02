@@ -17,9 +17,9 @@ import Player.Jugador;
 public class L_Taller implements Lanzarroca{
     boolean estado=false;
     int daño, 
-        cantidad=1000;
-    public int vida = 500;
-    public int costo = 1500;
+        cantidad;
+    public int vida = 200;
+    public int costo = 1000;
     public Jugador jugador;
 
     public L_Taller() {
@@ -81,7 +81,7 @@ public class L_Taller implements Lanzarroca{
     public void construir(Jugador jugador){
         int total, total1;
         AbstractFactory play = FactoryP.getFactory("Lanzarroca");
-        Lanzarroca ta = play.getLanzarroca("CarbonStorage");
+        Lanzarroca ta = play.getLanzarroca("Taller");
         L_Taller lt = new L_Taller(jugador);
         if(lt.getJugador().getC_mando2().getRecurso1() >= costo 
            && lt.getJugador().getC_mando2().getRecurso2() >= costo){
@@ -92,7 +92,7 @@ public class L_Taller implements Lanzarroca{
             System.out.println("Construccion realizada");
             lt.getJugador().getEdi_2().add(ta);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     

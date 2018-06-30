@@ -14,9 +14,9 @@ import Player.Jugador;
  */
 public class T_Lanzarroca implements Lanzarroca{
     
-    public int daño =300;
-    public int vida = 300;
-    public int costo = 1000;
+    public int daño =500;
+    public int vida = 500;
+    public int costo = 2000;
     int cantidad;
     public Jugador jugador;
     boolean estado=false;
@@ -94,10 +94,10 @@ public class T_Lanzarroca implements Lanzarroca{
     public boolean entrenar(Jugador jugador){
         int total, total1;
         T_Lanzarroca tl = new T_Lanzarroca(jugador);
-        if(tl.getJugador().getC_mando2().getRecurso1() >= costo 
+        if(tl.getJugador().getC_mando2().getRecurso2() >= costo 
            && tl.getJugador().getC_mando2().getRecurso3() >= costo && estado==false){
-            total = tl.getJugador().getC_mando2().getRecurso1()-costo;  
-            tl.getJugador().getC_mando2().setRecurso1(total);
+            total = tl.getJugador().getC_mando2().getRecurso2()-costo;  
+            tl.getJugador().getC_mando2().setRecurso2(total);
             total1 = tl.getJugador().getC_mando2().getRecurso3()-costo;
             tl.getJugador().getC_mando2().setRecurso3(total1);
             setEstado(true);

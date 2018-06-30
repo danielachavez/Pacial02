@@ -92,7 +92,7 @@ public class V_Cuartel implements Verdugo{
             System.out.println("Construccion realizada");
             lc.getJugador().getEdi_3().add(ve);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     

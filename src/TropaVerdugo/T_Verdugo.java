@@ -14,9 +14,9 @@ import Player.Jugador;
  */
 public class T_Verdugo implements Verdugo{
     
-    public int daño =100;
-    public int vida = 100;
-    public int costo = 75;
+    public int daño =150;
+    public int vida = 150;
+    public int costo = 100;
     int cantidad;
     public Jugador jugador;
     boolean estado=false;

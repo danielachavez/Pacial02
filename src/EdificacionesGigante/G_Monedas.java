@@ -5,8 +5,11 @@
  */
 package EdificacionesGigante;
 
+import AbstracFactory.AbstractFactory;
+import AbstracFactory.FactoryP;
 import Gigante.Gigante;
 import Player.Jugador;
+
 
 /**
  *
@@ -14,8 +17,10 @@ import Player.Jugador;
  */
 public class G_Monedas implements Gigante{
     
-    public int costo = 2000;
-    int cantidad;
+    public int vida = 500;
+    int daño;
+    public int costo = 1000;
+    int cantidad=1000;
     public Jugador jugador;
     boolean estado = false;
 
@@ -25,7 +30,6 @@ public class G_Monedas implements Gigante{
     public G_Monedas(Jugador jugador) {
         this.jugador = jugador;
     }
-
     
 
     public int getCosto() {
@@ -47,6 +51,21 @@ public class G_Monedas implements Gigante{
     public Jugador getJugador() {
         return jugador;
     }
+    public int getDaño() {
+        return daño;
+    }
+
+    public void setDaño(int daño) {
+        this.daño = daño;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
 
     public void setJugador(Jugador jugador) {
         this.jugador = jugador;
@@ -60,10 +79,6 @@ public class G_Monedas implements Gigante{
         this.estado = estado;
     }
     
-    @Override
-    public void construir(Jugador jugador){
-        //return cantidad;
-    }
     
     @Override
     public int recoger(Jugador jugador){
@@ -78,22 +93,32 @@ public class G_Monedas implements Gigante{
    
     
     @Override
-    public void generar(Jugador jugador){
+    public void construir(Jugador jugador){
         int total, total1;
+        AbstractFactory gigante = FactoryP.getFactory("Gigante");
+        Gigante mo = gigante.getGigante("Almacenamiento de Monedas");
         G_Monedas gm = new G_Monedas(jugador);
         if(gm.getJugador().getC_mando().getRecurso1() >= costo 
-           && gm.getJugador().getC_mando().getRecurso3() >= costo && estado==false){
+           && gm.getJugador().getC_mando().getRecurso2() >= costo){
             total = gm.getJugador().getC_mando().getRecurso1()-costo;  
             gm.getJugador().getC_mando().setRecurso1(total);
-            total1 = gm.getJugador().getC_mando().getRecurso3()-costo;
-            gm.getJugador().getC_mando().setRecurso3(total1);
-            setEstado(true);
-            System.out.println("Se entreno Bayonetta");
+            total1 = gm.getJugador().getC_mando().getRecurso2()-costo;
+            gm.getJugador().getC_mando().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            gm.getJugador().getEdi_1().add(mo);
         }else{
-            System.out.println("No tiene recursos suficientes");
-            setEstado(false);
+            System.out.println("No tiene suficientes recursos ");
         }
-       
+    }
+
+    @Override
+    public int getAtacar(){
+        return daño;
+    }
+    
+    @Override
+    public boolean entrenar(Jugador jugador){
+        return estado;
     }
     
     @Override
@@ -101,16 +126,11 @@ public class G_Monedas implements Gigante{
         return estado;
     }
     
-
-
     @Override
-    public int getAtacar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean entrenar(Jugador jugador) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    public void generar(Jugador jugador){
+        
+    }  
 }
+
+    
+  

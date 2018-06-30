@@ -76,8 +76,8 @@ public class Menu {
     Verdugo v5 = verdugo.getVerdugo("Cuartel");
     Verdugo v6 = verdugo.getVerdugo("Motocicleta");
     Verdugo v7 = verdugo.getVerdugo("Camion");
-    Verdugo v8 = verdugo.getVerdugo("Verdugo");
-    Verdugo v9 = verdugo.getVerdugo("Duendes");
+    Verdugo v8 = verdugo.getVerdugo("Duendes");
+    Verdugo v9 = verdugo.getVerdugo("Verdugo");
     
     
     public void MenuRaza(Jugador jugador){
@@ -762,15 +762,15 @@ public class Menu {
         int opc=0;
         do{
             System.out.println("-*-*-*-*-*-*-*-*-*-Recursos-*-*-*-*-*-*-*-*-*-*-*-*-");
-            System.out.println("Adamantium: "+getJugador().getC_mando3().getRecurso1());
-            System.out.println("Polvora: "+getJugador().getC_mando3().getRecurso2());
-            System.out.println("Energia: "+getJugador().getC_mando3().getRecurso3());
+            System.out.println("Fichas: "+getJugador().getC_mando3().getRecurso1());
+            System.out.println("Diamantes: "+getJugador().getC_mando3().getRecurso2());
+            System.out.println("Acido: "+getJugador().getC_mando3().getRecurso3());
             System.out.println("\n*-*-*-*-*-*-*-*Verdugo*-*-*-*-*-*-*-*-");
             System.out.println("1. Atacar");
             System.out.println("2. Generar Acido");
             System.out.println("3. Construir Almacenamiento de Fichas");
             System.out.println("4. Construir Almacenamiento de Diamantes");
-            System.out.println("5. Construir Generador de Acido");
+            System.out.println("5. Construir Almacenamiento de Acido");
             System.out.println("6. Construir Mina de Diamante");
             System.out.println("7. Construir Torre tesla");
             System.out.println("8. Construir Cuartel");
@@ -782,6 +782,7 @@ public class Menu {
             System.out.println("14. Recoger Diamante");
             System.out.println("15. Mejorar Centro Mando");
             System.out.println("16. Terminar turno");
+            System.out.println("17. Agregar segundo jugador");
             
             Scanner auxi = new Scanner(System.in);
             try{
@@ -932,7 +933,7 @@ public class Menu {
                 case 8:
                     System.out.println("isEmpty: "+getJugador().getEdi_3().isEmpty());
                     System.out.println("size: "+getJugador().getEdi_3().size());
-                    System.out.println("Cuesta 50 ficha, 50 acido. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 ficha, 50 acido. Desea continuar?((Si/No)");
                     res = auxi.next();
                     if(res.equalsIgnoreCase("Si")){
                         v5.construir(jugador);
@@ -945,7 +946,7 @@ public class Menu {
                 case 9:
                     System.out.println("isEmpty: "+getJugador().getEdi_3().isEmpty());
                     System.out.println("size: "+getJugador().getEdi_3().size());
-                    System.out.println("Cuesta 50 ficha, 50 diamante. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 ficha, 50 diamante. Desea continuar?((Si/No)");
                     res = auxi.next();
                     if(res.equalsIgnoreCase("Si")){
                         v6.construir(jugador);

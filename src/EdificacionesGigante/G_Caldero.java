@@ -15,7 +15,9 @@ import Player.Jugador;
  * @author Daniela Chavez
  */
 public class G_Caldero implements Gigante{
-    int daño, cantidad=1000;
+    
+    int daño,
+        cantidad=1000;
     int vida = 500;
     int costo = 1500;
     public Jugador jugador;
@@ -74,16 +76,16 @@ public class G_Caldero implements Gigante{
         AbstractFactory gigante = FactoryP.getFactory("Gigante");
         Gigante g1 = gigante.getGigante("Caldero de hechizo");
         G_Caldero gc = new G_Caldero(jugador);
-         if(gc.getJugador().getC_mando().getRecurso2() >= costo 
+         if(gc.getJugador().getC_mando().getRecurso1() >= costo 
            && gc.getJugador().getC_mando().getRecurso3() >= costo){
-            total = gc.getJugador().getC_mando().getRecurso2()-costo;  
-            gc.getJugador().getC_mando().setRecurso2(total);
+            total = gc.getJugador().getC_mando().getRecurso1()-costo;  
+            gc.getJugador().getC_mando().setRecurso1(total);
             total1 = gc.getJugador().getC_mando().getRecurso3()-costo;
             gc.getJugador().getC_mando().setRecurso3(total1);
             System.out.println("Construccion realizada");
             gc.getJugador().getEdi_1().add(g1);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     
@@ -98,7 +100,13 @@ public class G_Caldero implements Gigante{
     
     @Override
     public int getAtacar(){
-        return daño;
+        int total;
+        G_Caldero gc = new G_Caldero();
+        System.out.println("antes: "+getVida());
+        total = getVida()-gc.getDaño();
+        setVida(total);
+        System.out.println("despues: "+getVida());
+        return total;
     }
     
     @Override

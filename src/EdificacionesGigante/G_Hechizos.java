@@ -5,6 +5,8 @@
  */
 package EdificacionesGigante;
 
+import AbstracFactory.AbstractFactory;
+import AbstracFactory.FactoryP;
 import Gigante.Gigante;
 import Player.Jugador;
 
@@ -14,8 +16,8 @@ import Player.Jugador;
  */
 public class G_Hechizos implements Gigante{
     
-    
-    public int daño = 75;
+    public int vida = 500;
+    public int daño;
     public int costo = 1000;
     int cantidad;
     public Jugador jugador;
@@ -28,8 +30,6 @@ public class G_Hechizos implements Gigante{
         this.jugador = jugador;
     }
 
-    
-
     public int getDaño() {
         return daño;
     }
@@ -38,6 +38,13 @@ public class G_Hechizos implements Gigante{
         this.daño = daño;
     }
 
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
     public int getCosto() {
         return costo;
     }
@@ -70,10 +77,6 @@ public class G_Hechizos implements Gigante{
         this.estado = estado;
     }
     
-    @Override
-    public void construir(Jugador jugador){
-        //return cantidad;
-    }
     
     @Override
     public int recoger(Jugador jugador){
@@ -86,40 +89,45 @@ public class G_Hechizos implements Gigante{
     }
     
     @Override
+    public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory gigante = FactoryP.getFactory("Gigante");
+        Gigante he = gigante.getGigante("Almacenamiento de hechizos");
+        G_Hechizos gh = new G_Hechizos(jugador);
+        if(gh.getJugador().getC_mando().getRecurso1() >= costo 
+           && gh.getJugador().getC_mando().getRecurso3() >= costo){
+            total = gh.getJugador().getC_mando().getRecurso1()-costo;  
+            gh.getJugador().getC_mando().setRecurso1(total);
+            total1 = gh.getJugador().getC_mando().getRecurso3()-costo;
+            gh.getJugador().getC_mando().setRecurso3(total1);
+            System.out.println("Construccion realizada");
+            gh.getJugador().getEdi_1().add(he);
+        }else{
+            System.out.println("No tiene suficientes recursos ");
+        }
+    }
+
+    @Override
     public int getAtacar(){
-       return daño;
+        return daño;
     }
     
+    @Override
+    public boolean entrenar(Jugador jugador){
+        return estado;
+    }
     
     @Override
     public boolean estado(){
         return estado;
     }
-
-    @Override
-    public boolean entrenar(Jugador jugador) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void generar(Jugador jugador) {
-       int total, total1;
-        G_Hechizos gh = new G_Hechizos(jugador);
-        if(gh.getJugador().getC_mando().getRecurso1() >= costo 
-           && gh.getJugador().getC_mando().getRecurso2() >= costo && estado==false){
-            total = gh.getJugador().getC_mando().getRecurso1()-costo;  
-            gh.getJugador().getC_mando().setRecurso1(total);
-            total1 = gh.getJugador().getC_mando().getRecurso2()-costo;
-            gh.getJugador().getC_mando().setRecurso2(total1);
-            setEstado(true);
-            System.out.println("Se entreno Koopa Troopas");
-        }else{
-            System.out.println("No tiene recursos suficientes");
-            setEstado(false);
-        }
-    }
-
-  
     
-   
+    @Override
+    public void generar(Jugador jugador){
+        G_Hechizos m = new G_Hechizos(jugador);
+        m.getJugador().getC_mando().setRecurso3(m.getJugador().getC_mando().getRecurso3()+1500);
+    }  
 }
+
+    
+  

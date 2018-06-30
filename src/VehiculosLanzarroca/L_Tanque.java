@@ -84,11 +84,11 @@ public class L_Tanque implements Lanzarroca{
         Lanzarroca tan = lanzarroca.getLanzarroca("Tanque");
         L_Tanque lt = new L_Tanque(jugador);
         if(lt.getJugador().getC_mando2().getRecurso1() >= costo 
-           && lt.getJugador().getC_mando2().getRecurso3() >= costo){
+           && lt.getJugador().getC_mando2().getRecurso2() >= costo){
             total = lt.getJugador().getC_mando2().getRecurso1()-costo;  
             lt.getJugador().getC_mando2().setRecurso1(total);
-            total1 = lt.getJugador().getC_mando2().getRecurso3()-costo;
-            lt.getJugador().getC_mando2().setRecurso3(total1);
+            total1 = lt.getJugador().getC_mando2().getRecurso2()-costo;
+            lt.getJugador().getC_mando2().setRecurso2(total1);
             System.out.println("Construccion realizada");
             lt.getJugador().getTrans_2().add(tan);
         }else{

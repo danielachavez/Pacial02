@@ -15,7 +15,9 @@ import Player.Jugador;
  * @author Daniela Chavez
  */
 public class G_Laboratorio implements Gigante{
-     int daño,
+    
+    
+    int daño,
          cantidad;
     public int vida = 500;
     public int costo = 1000;
@@ -76,15 +78,15 @@ public class G_Laboratorio implements Gigante{
         Gigante lab = gigante.getGigante("Laboratorio");
         G_Laboratorio gl = new G_Laboratorio(jugador);
         if(gl.getJugador().getC_mando().getRecurso1() >= costo 
-           && gl.getJugador().getC_mando().getRecurso3() >= costo){
+           && gl.getJugador().getC_mando().getRecurso2() >= costo){
             total = gl.getJugador().getC_mando().getRecurso1()-costo;  
-            gl.getJugador().getC_mando().setRecurso1(total);
-            total1 = gl.getJugador().getC_mando().getRecurso3()-costo;
-            gl.getJugador().getC_mando().setRecurso3(total1);
+            gl.getJugador().getC_mando().setRecurso2(total);
+            total1 = gl.getJugador().getC_mando().getRecurso2()-costo;
+            gl.getJugador().getC_mando().setRecurso2(total1);
             System.out.println("Construccion realizada");
             gl.getJugador().getEdi_1().add(lab);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     

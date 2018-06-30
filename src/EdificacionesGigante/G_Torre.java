@@ -15,7 +15,8 @@ import Player.Jugador;
  * @author Daniela Chavez
  */
 public class G_Torre implements Gigante{
-     int daño,
+    
+    int daño,
          cantidad;
     public int vida = 500;
     public int costo = 1500;
@@ -85,16 +86,16 @@ public class G_Torre implements Gigante{
         AbstractFactory gigante = FactoryP.getFactory("Gigante");
         Gigante g3 = gigante.getGigante("Torre de Arqueras");
         G_Torre gt = new G_Torre(jugador);
-        if(gt.getJugador().getC_mando().getRecurso1() >= costo 
+        if(gt.getJugador().getC_mando().getRecurso2() >= costo 
            && gt.getJugador().getC_mando().getRecurso3() >= costo){
-            total = gt.getJugador().getC_mando().getRecurso1()-costo;  
-            gt.getJugador().getC_mando().setRecurso1(total);
+            total = gt.getJugador().getC_mando().getRecurso2()-costo;  
+            gt.getJugador().getC_mando().setRecurso2(total);
             total1 = gt.getJugador().getC_mando().getRecurso3()-costo;
             gt.getJugador().getC_mando().setRecurso3(total1);
             System.out.println("Construccion realizada");
             gt.getJugador().getEdi_1().add(g3);
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
         }
     }
     

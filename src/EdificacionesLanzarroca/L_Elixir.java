@@ -5,6 +5,8 @@
  */
 package EdificacionesLanzarroca;
 
+import AbstracFactory.AbstractFactory;
+import AbstracFactory.FactoryP;
 import Lanzarroca.Lanzarroca;
 import EdificacionesVerdugo.V_Acido;
 import Player.Jugador;
@@ -15,7 +17,8 @@ import Player.Jugador;
  */
 public class L_Elixir implements Lanzarroca{
     
-
+    int daño;
+    public int vida = 350;
     public int costo = 1000;
     int cantidad;
     public Jugador jugador;
@@ -53,6 +56,21 @@ public class L_Elixir implements Lanzarroca{
         this.jugador = jugador;
     }
 
+    public int getDaño() {
+        return daño;
+    }
+
+    public void setDaño(int daño) {
+        this.daño = daño;
+    }
+    
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
     public boolean isEstado() {
         return estado;
     }
@@ -74,46 +92,40 @@ public class L_Elixir implements Lanzarroca{
 
    
     
-    @Override
-    public void generar(Jugador jugador){
+    public void construir(Jugador jugador){
         int total, total1;
-        V_Acido va = new V_Acido(jugador);
-        if(va.getJugador().getC_mando().getRecurso1() >= costo 
-           && va.getJugador().getC_mando().getRecurso3() >= costo && estado==false){
-            total = va.getJugador().getC_mando2().getRecurso1()-costo;  
-            va.getJugador().getC_mando().setRecurso1(total);
-            total1 = va.getJugador().getC_mando().getRecurso3()-costo;
-            va.getJugador().getC_mando().setRecurso3(total1);
-            setEstado(true);
-            System.out.println("Se entrenaron Old Hunters");
+        AbstractFactory lanzarroca = FactoryP.getFactory("Lanzarroca");
+        Lanzarroca gm = lanzarroca.getLanzarroca("Almacenamiento de elixir");
+        L_Elixir le = new L_Elixir (jugador);
+        if(le.getJugador().getC_mando2().getRecurso1() >= costo 
+           && le.getJugador().getC_mando2().getRecurso3() >= costo){
+            total = le.getJugador().getC_mando2().getRecurso1()-costo;  
+            le.getJugador().getC_mando2().setRecurso1(total);
+            total1 = le.getJugador().getC_mando2().getRecurso3()-costo;
+            le.getJugador().getC_mando2().setRecurso3(total1);
+            System.out.println("Construccion realizada");
+            le.getJugador().getEdi_2().add(gm);
         }else{
-            System.out.println("No tiene recursos suficientes");
-            setEstado(false);
-        }        
+            System.out.println("No tiene suficientes recursos ");
+        }
     }
     
+    @Override
+    public int getAtacar(){
+        return daño;
+    }
     
+    @Override
+    public boolean entrenar(Jugador jugador){
+        return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
+    }
     
     @Override
     public boolean estado(){
         return estado;
     }
-
-    @Override
-    public void construir(Jugador jugador) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getAtacar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean entrenar(Jugador jugador) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
-    
 }
