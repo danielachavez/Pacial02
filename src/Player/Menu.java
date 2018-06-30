@@ -118,11 +118,11 @@ public class Menu {
         int opc=0;
         String res;
         do{
-            System.out.println("----------------------Recursos---------------------");
+            System.out.println("-*-*-*-*-*-*-*-*-*-*-Recursos-*-*-*-*-*-*-*-*-*-*-*-");
             System.out.println("Monedas: "+getJugador().getC_mando().getRecurso1());
             System.out.println("Zafiro: "+getJugador().getC_mando().getRecurso2());
             System.out.println("Hechizo: "+getJugador().getC_mando().getRecurso3());
-            System.out.println("\n********Gigante********");
+            System.out.println("\n-*-*-*-*-*-*-*-*Gigante*-*-*-*-*-*-*-*-");
             System.out.println("1. Atacar");
             System.out.println("2. Generar Hechizos");
             System.out.println("3. Construir Almacenamiento de Monedas");
