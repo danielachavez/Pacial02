@@ -5,6 +5,8 @@
  */
 package VehiculosGigante;
 
+import AbstracFactory.AbstractFactory;
+import AbstracFactory.FactoryP;
 import Gigante.Gigante;
 import Player.Jugador;
 
@@ -78,7 +80,22 @@ public class G_Camion implements  Gigante {
     
     @Override
     public void construir(Jugador jugador){
-        //return cantidad;
+        int total, total1;
+        AbstractFactory nintendo = FactoryP.getFactory("Gigante");
+        Gigante ca = nintendo.getGigante("Camion");
+        G_Camion gcn = new G_Camion(jugador);
+        if(gcn.getJugador().getC_mando().getRecurso1() >= costo 
+           && gcn.getJugador().getC_mando().getRecurso2() >= costo){
+            total = gcn.getJugador().getC_mando().getRecurso1()-costo;  
+            gcn.getJugador().getC_mando().setRecurso1(total);
+            total1 = gcn.getJugador().getC_mando().getRecurso2()-costo;
+            gcn.getJugador().getC_mando().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            gcn.getJugador().getTrans_1().add(ca);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
+        
     }
     
     @Override
@@ -93,20 +110,7 @@ public class G_Camion implements  Gigante {
     
     @Override
     public boolean entrenar(Jugador jugador){
-        int total, total1;
-        G_Camion gc = new G_Camion(jugador);
-        if(gc.getJugador().getC_mando().getRecurso1() >= costo 
-           && gc.getJugador().getC_mando().getRecurso3() >= costo && estado==false){
-            total = gc.getJugador().getC_mando().getRecurso1()-costo;  
-            gc.getJugador().getC_mando().setRecurso1(total);
-            total1 = gc.getJugador().getC_mando().getRecurso3()-costo;
-            gc.getJugador().getC_mando().setRecurso3(total1);
-            setEstado(true);
-            System.out.println("Se entreno Bayonetta");
-        }else{
-            System.out.println("No tiene recursos suficientes");
-            setEstado(false);
-        }
+       boolean estado =false;
         return estado;
     }
     

@@ -85,7 +85,7 @@ public class Menu {
         
         Scanner auxi = new Scanner(System.in);
         int opc;
-        System.out.println("\n"+getJugador().getNombre() +"\nEliga su raza\n");
+        System.out.println("\n"+getJugador().getNombre() +"\nEliga su raza:\n");
         System.out.println("1. Gigante");
         System.out.println("2. Lanzarroca");
         System.out.println("3. Verdugo");
@@ -94,22 +94,22 @@ public class Menu {
         
         switch(opc){
             case 1:
-                System.out.println("Eligio la raza Gigante");
+                System.out.println("Selecciono la raza Gigante");
                 menu.MenuGigante(jugador);
             break;
             
             case 2:
-                System.out.println("Eligio la raza Lanzarroca");
+                System.out.println("Selecciono la raza Lanzarroca");
                 menu.MenuLanzarroca(jugador);
             break;
             
             case 3:
-                System.out.println("Eligio la raza Verdugo");
+                System.out.println("Selecciono la raza Verdugo");
                 menu.MenuVerdugo(jugador);
             break;
             
             default:
-                System.out.println("eligio La raza Gigante");
+                System.out.println("Selecciono La raza Gigante");
                 menu.MenuGigante(jugador);
         }
     }
@@ -118,11 +118,11 @@ public class Menu {
         int opc=0;
         String res;
         do{
-            System.out.println("----------------------RECURSOS---------------------");
+            System.out.println("----------------------Recursos---------------------");
             System.out.println("Monedas: "+getJugador().getC_mando().getRecurso1());
             System.out.println("Zafiro: "+getJugador().getC_mando().getRecurso2());
             System.out.println("Hechizo: "+getJugador().getC_mando().getRecurso3());
-            System.out.println("\n********Giagante********");
+            System.out.println("\n********Gigante********");
             System.out.println("1. Atacar");
             System.out.println("2. Generar Hechizos");
             System.out.println("3. Construir Almacenamiento de Monedas");
@@ -160,7 +160,7 @@ public class Menu {
                     res = auxi.next();
                     switch(res){
                         case "1":
-                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("Que desea ocupar para atacar?\n");
                             System.out.println("1. Arqueras");
                             System.out.println("2. Gigante");
                             String res1;
@@ -168,21 +168,21 @@ public class Menu {
                             switch(res1){
                                 case "1":
                                     if(g8.estado()==true){
-                                        System.out.println("Se encontraron Arqueras listos");
+                                        System.out.println("Las Arqueras estan disponible para un nuevo ataque");
                                         int total;
                                         total = getJugador().getEdi_1().indexOf(l)-g8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
-                                        System.out.println("No tiene Arqueras entrenados");
+                                        System.out.println("No tiene Arqueras entrenadas");
                                     }
                                 break;
                                 case "2":
                                     if(g9.estado()==true){
-                                        System.out.println("Se encontro Gigante lista");
+                                        System.out.println("El Gigante esta disponible para un nuevo ataque");
                                         g.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
-                                        System.out.println("No tiene Gigante entrenada");
+                                        System.out.println("No tiene Gigante entrenado");
                                     }
                                 break;
                             }
@@ -196,21 +196,21 @@ public class Menu {
                             switch(res12){
                                 case "1":
                                     if(g8.estado()==true){
-                                        System.out.println("Se encontraron Arqueras listos");
+                                        System.out.println("Las Arqueras estan disponible para un nuevo ataque");
                                         int total;
                                         total = getJugador().getEdi_1().indexOf(l)-g8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
-                                        System.out.println("No tiene Arqueras entrenados");
+                                        System.out.println("No tiene Arqueras entrenadas");
                                     }
                                 break;
                                 case "2":
                                     if(g9.estado()==true){
-                                        System.out.println("Se encontro Gigante lista");
+                                        System.out.println("El Gigante esta disponible para un nuevo ataque");
                                         g.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
-                                        System.out.println("No tiene Gigante entrenada");
+                                        System.out.println("No tiene Gigante entrenado");
                                     }
                                 break;
                             }
@@ -224,21 +224,21 @@ public class Menu {
                             switch(res31){
                                 case "1":
                                     if(g8.estado()==true){
-                                        System.out.println("Se encontraron Arqueras listos");
+                                        System.out.println("Las Arqueras estan disponible para un nuevo ataque");
                                         int total;
                                         total = getJugador().getEdi_1().indexOf(l)-g8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
-                                        System.out.println("No tiene Arqueras entrenados");
+                                        System.out.println("No tiene Arqueras entrenadas");
                                     }
                                 break;
                                 case "2":
                                     if(g9.estado()==true){
-                                        System.out.println("Se encontro Gigante lista");
+                                        System.out.println("El Gigante esta disponible para un nuevo ataque");
                                         g.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
-                                        System.out.println("No tiene Gigante entrenada");
+                                        System.out.println("No tiene Gigante entrenado");
                                     }
                                 break;
                             }
@@ -252,26 +252,26 @@ public class Menu {
                             switch(res11){
                                 case "1":
                                     if(g8.estado()==true){
-                                        System.out.println("Se encontraron Arqueras listos");
+                                        System.out.println("Las Arqueras estan disponible para un nuevo ataque");
                                         int total;
                                         total = getJugador().getC_mando2().getVida()-g8.getAtacar();
                                         getJugador().getC_mando2().setVida(total);
-                                        System.out.println("Ataque realizado!, se hizo "+g8.getAtacar()+" de danio");
+                                        System.out.println("Ataque realizado, se hizo "+g8.getAtacar()+" de daño");
                                         System.out.println("Nueva vida centro mando de rival: "+getJugador().getC_mando2().getVida());
                                     }else{
-                                        System.out.println("No tiene Arqueras entrenados");
+                                        System.out.println("No tiene Arqueras entrenadas");
                                     }
                                 break;
                                 case "2":
                                     if(g9.estado()==true){
-                                        System.out.println("Se encontro Gigante lista");
+                                        System.out.println("El Gigante esta disponible para un nuevo ataque");
                                         int total;
                                         total = getJugador().getC_mando2().getVida()-g9.getAtacar();
                                         getJugador().getC_mando2().setVida(total);
-                                        System.out.println("Ataque realizado!, se hizo "+g9.getAtacar()+" de danio");
+                                        System.out.println("Ataque realizado, se hizo "+g9.getAtacar()+" de daño");
                                         System.out.println("Nueva vida centro mando de rival: "+getJugador().getC_mando2().getVida());
                                     }else{
-                                        System.out.println("No tiene Gigante entrenada");
+                                        System.out.println("No tiene Gigante entrenado");
                                     }
                                 break;
                             }
@@ -403,21 +403,21 @@ public class Menu {
                     resp=resp*0.25;
                     resp=(int)resp/3;
                     
-                    System.out.println("El costo por recurso para la mejora es de: "+resp);
+                    System.out.println("El costo por recurso para mejorar El Centro de Mando es de: "+resp);
                     
                     if(getJugador().getC_mando().getRecurso1() >= resp && getJugador().getC_mando().getRecurso2() >= resp && getJugador().getC_mando().getRecurso3() >= resp){
                         getJugador().getC_mando().mejorar();
                         System.out.println("Recurso 1: "+getJugador().getC_mando().getRecurso1());
                         System.out.println("Recurso 2: "+getJugador().getC_mando().getRecurso3());
                         System.out.println("Recurso 3: "+getJugador().getC_mando().getRecurso2());
-                        System.out.println("Desea continurar con la mejora?(S/N)");
+                        System.out.println("Desea continurar para mejorar El Centro de Mando?(Si/No)");
                         res = auxi.next();
                         getJugador().getC_mando().setRecurso1(getJugador().getC_mando().getRecurso1()-1833);
                         getJugador().getC_mando().setRecurso2(getJugador().getC_mando().getRecurso2()-1833);
                         getJugador().getC_mando().setRecurso3(getJugador().getC_mando().getRecurso3()-1833);
-                        System.out.println("\nSe mejoro Centro de Mando!\n");
+                        System.out.println("\nSe mejoro El Centro de Mando\n");
                     }else{
-                        System.out.println("No tiene recursos suficientes");
+                        System.out.println("No tiene suficientes recursos ");
                     }
                     break;
                 case 16:
@@ -433,11 +433,11 @@ public class Menu {
         String res;
         int opc=0;
         do{
-            System.out.println("----------------------RECURSOS---------------------");
+            System.out.println("-*-*-*-*-*-*-*-*-*-Recursos-*-*-*-*-*-*-*-*-*-*-*-*-");
             System.out.println("Titanio: "+getJugador().getC_mando2().getRecurso1());
             System.out.println("Carbon: "+getJugador().getC_mando2().getRecurso2());
             System.out.println("Ecos: "+getJugador().getC_mando2().getRecurso3());
-            System.out.println("\n********Lanzarroca********");
+            System.out.println("\n*-*-*-*-*-*-*-Lanzarroca-*-*-*-*-*-*-*-");
             System.out.println("1. Atacar");
             System.out.println("2. Generar Elixir");
             System.out.println("3. Construir Almacenamiento Oro");
@@ -483,18 +483,18 @@ public class Menu {
                             switch(res1){
                                 case "1":
                                     if(l8.estado()==true){
-                                        System.out.println("Se encontraron Esbirros listos");
+                                        System.out.println("Los Esbirros estan disponible para un nuevo ataque");
                                         l8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
                                         System.out.println("No tiene Esbirros entrenados");
                                     }
                                 break;
                                 case "2":
                                     if(l9.estado()==true){
-                                        System.out.println("Se encontro Lanzarroca listo");
+                                        System.out.println("El Lanzarroca esta disponible para un nuevo ataque");
                                         l8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
                                         System.out.println("No tiene Lanzarroca entrenado");
                                     }
@@ -509,18 +509,18 @@ public class Menu {
                             switch(res14){
                                 case "1":
                                     if(l8.estado()==true){
-                                        System.out.println("Se encontraron Esbirros listos");
+                                        System.out.println("Los Esbirros estan disponible para un nuevo ataque");
                                         l8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
                                         System.out.println("No tiene Esbirros entrenados");
                                     }
                                 break;
                                 case "2":
                                     if(l9.estado()==true){
-                                        System.out.println("Se encontro Lanzarroca listo");
+                                        System.out.println("El Lanzarroca esta disponible para un nuevo ataque");
                                         l8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
                                         System.out.println("No tiene Lanzarroca entrenado");
                                     }
@@ -534,18 +534,18 @@ public class Menu {
                             switch(res31){
                                 case "1":
                                     if(l8.estado()==true){
-                                        System.out.println("Se encontraron Esbirros listos");
+                                        System.out.println("Los Esbirros estan disponible para un nuevo ataque");
                                         l8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
                                         System.out.println("No tiene Esbirros entrenados");
                                     }
                                 break;
                                 case "2":
                                     if(l9.estado()==true){
-                                        System.out.println("Se encontro Lanzarroca listo");
+                                        System.out.println("El Lanzarroca esta disponible para un nuevo ataque");
                                         l8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
                                         System.out.println("No tiene Lanzarroca entrenado");
                                     }
@@ -559,11 +559,11 @@ public class Menu {
                             switch(res11){
                                 case "1":
                                     if(l8.estado()==true){
-                                        System.out.println("Se encontraron Esbirros listos");
+                                        System.out.println("Los Esbirros estan disponible para un nuevo ataque");
                                         int total;
                                         total = getJugador().getC_mando().getVida()-l8.getAtacar();
                                         getJugador().getC_mando().setVida(total);
-                                        System.out.println("Ataque realizado!, se hizo "+l8.getAtacar()+" de danio");
+                                        System.out.println("Ataque realizado, se hizo "+l8.getAtacar()+" de daño");
                                         System.out.println("Nueva vida centro mando de rival: "+getJugador().getC_mando().getVida());
                                     }else{
                                         System.out.println("No tiene Esbirros entrenados");
@@ -571,11 +571,11 @@ public class Menu {
                                 break;
                                 case "2":
                                     if(l9.estado()==true){
-                                        System.out.println("Se encontro Lanzarroca listo");
+                                        System.out.println("El Lanzarroca esta disponible para un nuevo ataque");
                                         int total;
                                         total = getJugador().getC_mando().getVida()-l9.getAtacar();
                                         getJugador().getC_mando().setVida(total);
-                                        System.out.println("Ataque realizado!, se hizo "+l9.getAtacar()+" de danio");
+                                        System.out.println("Ataque realizado, se hizo "+l9.getAtacar()+" de daño");
                                         System.out.println("Nueva vida centro mando de rival: "+getJugador().getC_mando().getVida());
                                     }else{
                                         System.out.println("No tiene Lanzarroca entrenada");
@@ -728,7 +728,7 @@ public class Menu {
                     resp=resp*0.25;
                     resp=(int)resp/3;
                     
-                    System.out.println("El costo por recurso para la mejora es de: "+resp);
+                    System.out.println("El costo por recurso para mejorar El Centro de Mando es de: "+resp);
                     
                     if(getJugador().getC_mando2().getRecurso1() >= resp && getJugador().getC_mando2().getRecurso2() >= resp && getJugador().getC_mando2().getRecurso3() >= resp){
                         getJugador().getC_mando2().mejorar();
@@ -736,12 +736,12 @@ public class Menu {
                         System.out.println("Recurso 1: "+getJugador().getC_mando2().getRecurso1());
                         System.out.println("Recurso 2: "+getJugador().getC_mando2().getRecurso3());
                         System.out.println("Recurso 3: "+getJugador().getC_mando2().getRecurso2());
-                        System.out.println("Desea continurar con la mejora?(Si/No)");
+                        System.out.println("Desea continurar para mejorar El Centro de Mando?(Si/No)");
                         res = auxi.next();
                         getJugador().getC_mando2().setRecurso1(getJugador().getC_mando2().getRecurso1()-1833);
                         getJugador().getC_mando2().setRecurso2(getJugador().getC_mando2().getRecurso2()-1833);
                         getJugador().getC_mando2().setRecurso3(getJugador().getC_mando2().getRecurso3()-1833);
-                        System.out.println("\nSe mejoro Centro de Mando!\n");
+                        System.out.println("\nSe mejoro El Centro de Mando\n");
                     }else{
                         System.out.println("No tiene recursos suficientes");
                     }
@@ -761,11 +761,11 @@ public class Menu {
         String res;
         int opc=0;
         do{
-            System.out.println("----------------------RECURSOS---------------------");
+            System.out.println("-*-*-*-*-*-*-*-*-*-Recursos-*-*-*-*-*-*-*-*-*-*-*-*-");
             System.out.println("Adamantium: "+getJugador().getC_mando3().getRecurso1());
             System.out.println("Polvora: "+getJugador().getC_mando3().getRecurso2());
             System.out.println("Energia: "+getJugador().getC_mando3().getRecurso3());
-            System.out.println("\n********Verdugo********");
+            System.out.println("\n*-*-*-*-*-*-*-*Verdugo*-*-*-*-*-*-*-*-");
             System.out.println("1. Atacar");
             System.out.println("2. Generar Acido");
             System.out.println("3. Construir Almacenamiento de Fichas");
@@ -810,18 +810,18 @@ public class Menu {
                             switch(res1){
                                 case "1":
                                     if(v8.estado()==true){
-                                        System.out.println("Se encontraron Duendes listos");
+                                        System.out.println("Los Duendes estan disponible para un nuevo ataque");
                                         v8.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
                                         System.out.println("No tiene Duendes entrenados");
                                     }
                                 break;
                                 case "2":
                                     if(v9.estado()==true){
-                                        System.out.println("Se encontro Verdugo listo");
+                                        System.out.println("El Verdugo esta disponible para un nuevo ataque");
                                         v9.getAtacar();
-                                        System.out.println("Ataque realizado!");
+                                        System.out.println("Ataque realizado");
                                     }else{
                                         System.out.println("No tiene Verdugo entrenado");
                                     }
@@ -836,23 +836,23 @@ public class Menu {
                             switch(res11){
                                 case "1":
                                     if(v8.estado()==true){
-                                        System.out.println("Se encontraron Duendes listos");
+                                        System.out.println("Los Duendes estan disponible para un nuevo ataques");
                                         int total;
                                         total = getJugador().getC_mando2().getVida()-v8.getAtacar();
                                         getJugador().getC_mando2().setVida(total);
-                                        System.out.println("Ataque realizado!, se hizo "+v8.getAtacar()+" de danio");
+                                        System.out.println("Ataque realizado, se hizo "+v8.getAtacar()+" de daño");
                                         System.out.println("Nueva vida centro mando de rival: "+getJugador().getC_mando2().getVida());
                                     }else{
-                                        System.out.println("No tiene Locust entrenados");
+                                        System.out.println("No tiene Duendes entrenados");
                                     }
                                 break;
                                 case "2":
                                     if(v9.estado()==true){
-                                        System.out.println("Se encontro Verdugo listo");
+                                        System.out.println("El Verdugo esta disponible para un nuevo ataque");
                                         int total;
                                         total = getJugador().getC_mando2().getVida()-v9.getAtacar();
                                         getJugador().getC_mando2().setVida(total);
-                                        System.out.println("Ataque realizado!, se hizo "+v9.getAtacar()+" de danio");
+                                        System.out.println("Ataque realizado, se hizo "+v9.getAtacar()+" de daño");
                                         System.out.println("Nueva vida centro mando de rival: "+getJugador().getC_mando2().getVida());
                                     }else{
                                         System.out.println("No tiene Verdugo entrenado");
@@ -1003,19 +1003,19 @@ public class Menu {
                     resp=resp*0.25;
                     resp=(int)resp/3;
                     
-                    System.out.println("El costo por recurso para la mejora es de: "+resp);
+                    System.out.println("El costo por recurso para la mejora El Centro de Mando es de: "+resp);
                     
                     if(getJugador().getC_mando3().getRecurso1() >= resp && getJugador().getC_mando3().getRecurso2() >= resp && getJugador().getC_mando3().getRecurso3() >= resp){
                         getJugador().getC_mando().mejorar();
                         System.out.println("Recurso 1: "+getJugador().getC_mando3().getRecurso1());
                         System.out.println("Recurso 2: "+getJugador().getC_mando3().getRecurso3());
                         System.out.println("Recurso 3: "+getJugador().getC_mando3().getRecurso2());
-                        System.out.println("Desea continurar con la mejora?(Si/No)");
+                        System.out.println("Desea continurar para mejora El Centro de Mando?(Si/No)");
                         res = auxi.next();
                         getJugador().getC_mando3().setRecurso1(getJugador().getC_mando3().getRecurso1()-1833);
                         getJugador().getC_mando3().setRecurso2(getJugador().getC_mando3().getRecurso2()-1833);
                         getJugador().getC_mando3().setRecurso3(getJugador().getC_mando3().getRecurso3()-1833);
-                        System.out.println("\nSe mejoro Centro de Mando!\n");
+                        System.out.println("\nSe mejoro El Centro de Mando\n");
                     }else{
                         System.out.println("No tiene recursos suficientes");
                     }

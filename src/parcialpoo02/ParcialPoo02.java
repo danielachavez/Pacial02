@@ -21,14 +21,13 @@ public class ParcialPoo02 {
         Jugador a = new Jugador();
      
         System.out.println("Instruccciones del juego");
-        System.out.println("Le Mostraremos las caracteristicas de cada raza");
+        System.out.println("Caracteristicas de cada raza");
         System.out.println("La raza de Gigante tiene la habilidad  de que el ataque de sus tropas es el doble");
         System.out.println("La raza Lanzarroca Poseen la milicia mas fuerte de todas, pero el costo de edificaciones y milicia es muy alto");
         System.out.println("L raza Verdugo Poseen los mejores vehiculos para atacar, pero sus edificaciones son debiles");
         System.out.println("Atencion");
-        System.out.println("Por reglas del juego, el primer jugador debe agregar al segundo desde el menu en su primer turno\nasi como el jugador 2 debe pasar su primer turno para poder dar inicio a la batalla.");
-        System.out.println("Si hace caso omiso a las indicaciones, se le infectara la maquina con Ransomware.");
-        System.out.println("\nAcepta las indicaciones y llamadas de atencion?(Si/No)");
+        System.out.println("El primer jugador debe agregar al segundo jugador desde el menu al finalizar su primer turno\nasi como el jugador 2 debe pasar su primer turno para poder dar inicio a la batalla.");
+        System.out.println("\nComenzar el juego (Si/No)");
         Scanner auxi = new Scanner(System.in);
         String b = auxi.next();
         if(b.equalsIgnoreCase("Si")){

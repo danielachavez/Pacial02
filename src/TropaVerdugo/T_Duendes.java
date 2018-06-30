@@ -101,9 +101,9 @@ public class T_Duendes implements Verdugo{
             total1 = td.getJugador().getC_mando().getRecurso3()-costo;
             td.getJugador().getC_mando().setRecurso3(total1);
             setEstado(true);
-            System.out.println("Se entreno a Master Chief");
+            System.out.println("Se entreno la tropa de duendes");
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
             setEstado(false);
         }
         return estado;

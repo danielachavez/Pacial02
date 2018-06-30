@@ -101,9 +101,9 @@ public class T_Lanzarroca implements Lanzarroca{
             total1 = tl.getJugador().getC_mando2().getRecurso3()-costo;
             tl.getJugador().getC_mando2().setRecurso3(total1);
             setEstado(true);
-            System.out.println("Se entrenaron Old Hunters");
+            System.out.println("Se entrenaron el Lanzarroca");
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
             setEstado(false);
         }
         return estado;

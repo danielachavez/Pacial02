@@ -102,9 +102,9 @@ public class T_Gigante implements Gigante {
             total1 = tg.getJugador().getC_mando().getRecurso2()-costo;
             tg.getJugador().getC_mando().setRecurso2(total1);
             setEstado(true);
-            System.out.println("Se entreno Koopa Troopas");
+            System.out.println("Se entreno Gigante");
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
             setEstado(false);
         }
         return estado;

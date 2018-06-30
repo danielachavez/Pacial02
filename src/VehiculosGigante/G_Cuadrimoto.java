@@ -5,6 +5,8 @@
  */
 package VehiculosGigante;
 
+import AbstracFactory.AbstractFactory;
+import AbstracFactory.FactoryP;
 import Gigante.Gigante;
 import Player.Jugador;
 
@@ -78,7 +80,21 @@ public class G_Cuadrimoto implements Gigante {
     
     @Override
     public void construir(Jugador jugador){
-        //return cantidad;
+        int total, total1;
+        AbstractFactory nintendo = FactoryP.getFactory("Gigante");
+        Gigante cua = nintendo.getGigante("Cuadrimoto");
+        G_Cuadrimoto gc = new G_Cuadrimoto(jugador);
+        if(gc.getJugador().getC_mando().getRecurso1() >= costo 
+           && gc.getJugador().getC_mando().getRecurso2() >= costo){
+            total = gc.getJugador().getC_mando().getRecurso1()-costo;  
+            gc.getJugador().getC_mando().setRecurso1(total);
+            total1 = gc.getJugador().getC_mando().getRecurso2()-costo;
+            gc.getJugador().getC_mando().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            gc.getJugador().getTrans_1().add(cua);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override
@@ -93,20 +109,7 @@ public class G_Cuadrimoto implements Gigante {
     
     @Override
     public boolean entrenar(Jugador jugador){
-        int total, total1;
-        G_Cuadrimoto gc = new G_Cuadrimoto(jugador);
-        if(gc.getJugador().getC_mando().getRecurso1() >= costo 
-           && gc.getJugador().getC_mando().getRecurso2() >= costo && estado==false){
-            total = gc.getJugador().getC_mando().getRecurso1()-costo;  
-            gc.getJugador().getC_mando().setRecurso1(total);
-            total1 = gc.getJugador().getC_mando().getRecurso2()-costo;
-            gc.getJugador().getC_mando().setRecurso2(total1);
-            setEstado(true);
-            System.out.println("Se entreno Koopa Troopas");
-        }else{
-            System.out.println("No tiene recursos suficientes");
-            setEstado(false);
-        }
+        boolean estado =false;
         return estado;
     }
     

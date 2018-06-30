@@ -101,9 +101,9 @@ public class T_Esbirros implements Lanzarroca{
             total1 = te.getJugador().getC_mando2().getRecurso3()-costo;
             te.getJugador().getC_mando2().setRecurso3(total1);
             setEstado(true);
-            System.out.println("Se entrenaron Old Hunters");
+            System.out.println("Se entrenaron los esbirros");
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
             setEstado(false);
         }
         return estado;

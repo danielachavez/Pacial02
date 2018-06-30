@@ -168,7 +168,7 @@ public class Jugador {
         ArrayList<Lanzarroca> trans_2 = new ArrayList();
         ArrayList<Verdugo> trans_3 = new ArrayList();
         Scanner auxi = new Scanner(System.in);
-        System.out.println("\nEmpieza el jugador 1!");
+        System.out.println("\nEmpieza el jugador 1");
         System.out.println("Jugador 1, digite su nombre: ");
         String jugador1 = auxi.nextLine();
         Jugador a1 = new Jugador(jugador1, cm1, cm2, cm3, edi_1, edi_2, edi_3, trans_1, trans_2, trans_3);

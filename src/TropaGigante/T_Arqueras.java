@@ -102,9 +102,9 @@ public class T_Arqueras implements Gigante {
             total1 = ta.getJugador().getC_mando().getRecurso3()-costo;
             ta.getJugador().getC_mando().setRecurso3(total1);
             setEstado(true);
-            System.out.println("Se entreno Bayonetta");
+            System.out.println("Se entreno Arqueras");
         }else{
-            System.out.println("No tiene recursos suficientes");
+            System.out.println("No tiene suficientes recursos ");
             setEstado(false);
         }
         return estado;
